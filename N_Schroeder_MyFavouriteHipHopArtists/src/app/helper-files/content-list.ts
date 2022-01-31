@@ -1,4 +1,6 @@
-class ContentList {
+import { Content } from './content-interface';
+
+export class ContentList {
     private _items: Content[];
 
     constructor(item: Content) {
