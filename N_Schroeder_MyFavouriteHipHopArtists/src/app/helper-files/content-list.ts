@@ -27,7 +27,6 @@ export class ContentList {
         return `<div class="title">title: ${this._items[index].title}</div>
         <div class="description">description: ${this._items[index].description}</div>
         <div class="creator">creator: ${this._items[index].creator}</div>
-        <div class="imageUrl"><img src="${this._items[index].imgURL}"></div>
-        <div class="type">${this._items[index].type}</div>`;
+        <div class="imageUrl"><img src="${this._items[index].imgURL}"></div>`;
     }
 }
