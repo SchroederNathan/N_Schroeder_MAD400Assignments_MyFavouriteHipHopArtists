@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-import { ContentList } from '../helper-files/content-list';
 
 @Component({
   selector: 'app-content-card',
@@ -37,6 +36,8 @@ export class ContentCardComponent implements OnInit {
       creator: "Nathan Schroeder",
       imgURL: "https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/6/17/1434554616815/Kendrick-Lamar-photograph-009.jpg?width=620&quality=85&auto=format&fit=max&s=38335cea8205e5544b27efc587139c35",
     };
+
+    
 
     this.list = new ContentList();
     this.list.addContent(this.kanye);
