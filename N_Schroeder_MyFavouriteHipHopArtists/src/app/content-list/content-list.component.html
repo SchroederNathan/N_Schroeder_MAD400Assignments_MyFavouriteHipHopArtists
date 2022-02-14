@@ -1,1 +1,2 @@
-<p>content-list works!</p>
+<app-content-card *ngFor="let item of artistList; first as isTheFirstElement"
+                  [content]="item" [class.is-first]="isTheFirstElement"></app-content-card>
