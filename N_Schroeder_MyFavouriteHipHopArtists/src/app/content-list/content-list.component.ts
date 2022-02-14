@@ -24,4 +24,10 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  updatePage(sTerm: string): void {
+    console.log("Before changing it ", sTerm);
+    // this.title = "Changed value of title";
+    // run something here
+  }
+
 }

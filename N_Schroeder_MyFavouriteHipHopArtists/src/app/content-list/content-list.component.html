@@ -1,2 +1,10 @@
-<app-content-card *ngFor="let item of artistList; first as isTheFirstElement"
-                  [content]="item" [class.is-first]="isTheFirstElement"></app-content-card>
+<!-- <app-content-card *ngFor="let item of artistList; first as isTheFirstElement"
+                  [content]="item" [class.is-first]="isTheFirstElement"></app-content-card> -->
+                  <div>
+                    <h4>Find Type</h4>
+                    <input #searchTerm>: {{ searchTerm.value }}
+                    <br><button (click)="updatePage(searchTerm.value)">Update page</button>
+                  </div>
+                  <app-content-card *ngFor="let item of (artistList |
+                  contentTagged)"
+                  [content]="item"></app-content-card>
