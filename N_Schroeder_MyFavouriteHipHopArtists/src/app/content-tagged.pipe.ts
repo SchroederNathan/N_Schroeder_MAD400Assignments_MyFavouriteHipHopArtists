@@ -6,9 +6,12 @@ import { Content } from './helper-files/content-interface';
 })
 export class ContentTaggedPipe implements PipeTransform {
 
-  transform(artistList: Content[]) {
-    return artistList.filter(c => c.tags != null ? c.tags.length : null);
-      ;
+  transform(artistList: Content[], type?: string): Content[] {
+    // return digimonList.filter(digimon => digimon.type === type); // technically this solves the null check too
+    return artistList.filter(artist => {
+      console.log("Artist name: ", artist.title, " type is set to ", artist.type);
+      return type ? artist.type === type : (!artist.type || artist.type === '');
+    });
   }
 
 }
