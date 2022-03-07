@@ -1,15 +1,4 @@
-<!-- <app-content-card *ngFor="let item of artistList; first as isTheFirstElement"
-                  [content]="item" [class.is-first]="isTheFirstElement"></app-content-card> -->
-                  <!-- <div>
-                    <h4>Find Type</h4>
-                    <input #searchTerm>: {{ searchTerm.value }}
-                    <br><button (click)="updatePage(searchTerm.value)">Update page</button>
-                  </div>
-                  <app-content-card *ngFor="let item of (artistList |
-                  contentTagged)"
-                  [content]="item"></app-content-card> -->
 
-                  <!--<form>-->
   <div>
     <input #titleSearch>
   <button (click)="checkForTitle(titleSearch.value)">Title Check</button>
@@ -18,16 +7,37 @@
     <span class="failure" *ngIf="titleFound === false"> {{ titleSearch.value}} not found!</span>
   </div>
 </div>
-<!--</form>-->
+<!-- 
+<app-content-card appHoverAffect affect="border" [firstOrLast]="isTheFirstElement || isLast"
+[class.found]="titleSearch.value === item.title" 
+*ngFor="let item of (artistList | contentTagged); first as isTheFirstElement" [content]="item"
+[class.is-first]="isTheFirstElement" class="no-type"></app-content-card>         
+
+<app-content-card appHoverAffect affect="border" [firstOrLast]="isTheFirstElement || isLast"
+[class.found]="titleSearch.value === item.title"
+ *ngFor="let item of (artistList | contentTagged: 'Rapper'); first as isTheFirstElement" [content]="item"
+ [class.is-first]="isTheFirstElement" class="rapper"></app-content-card>
+
+<app-content-card appHoverAffect affect="border" [firstOrLast]="isTheFirstElement || isLast"
+[class.found]="titleSearch.value === item.title" 
+*ngFor="let item of (artistList | contentTagged: 'Producer'); first as isTheFirstElement" [content]="item" 
+[class.is-first]="isTheFirstElement" [class]="item.type | lowercase"></app-content-card>
+ -->
 
 <!-- No type set -->
-<app-content-card [class.found]="titleSearch.value === item.title" *ngFor="let item of (artistList | contentTagged); first as isTheFirstElement"
-                  [content]="item" [class.is-first]="isTheFirstElement" class="no-type"></app-content-card>
-                  
-<!-- Rapper type set -->
-<app-content-card [class.found]="titleSearch.value === item.title" *ngFor="let item of (artistList | contentTagged: 'Rapper'); first as isTheFirstElement"
-                  [content]="item" [class.is-first]="isTheFirstElement" class="rapper"></app-content-card>
+<app-content-card appHoverAffect affect="border" [firstOrLast]="isTheFirstElement || isLast"
+  [class.found]="titleSearch.value === item.title"
+  *ngFor="let item of (artistList | contentTagged); first as isTheFirstElement; last as isLast" [content]="item"
+  [class.is-first]="isTheFirstElement" class="no-type"></app-content-card>
 
-<!-- type set -->
-<app-content-card [class.found]="titleSearch.value === item.title" *ngFor="let item of (artistList | contentTagged: 'Producer'); first as isTheFirstElement"
-                  [content]="item" [class.is-first]="isTheFirstElement" [class]="item.type | lowercase"></app-content-card>
+<!-- Rapper type set -->
+<app-content-card appHoverAffect affect="border" [firstOrLast]="isTheFirstElement || isLast"
+  [class.found]="titleSearch.value === item.title"
+  *ngFor="let item of (artistList | contentTagged: 'Rapper'); first as isTheFirstElement; last as isLast" [content]="item"
+  [class.is-first]="isTheFirstElement" class="rookie"></app-content-card>
+
+<!--Producer type set -->
+<app-content-card appHoverAffect affect="border" [firstOrLast]="isTheFirstElement || isLast"
+  [class.found]="titleSearch.value === item.title"
+  *ngFor="let item of (artistList | contentTagged: 'Producer'); first as isTheFirstElement; last as isLast"
+  [content]="item" [class.is-first]="isTheFirstElement" [class]="item.type | lowercase"></app-content-card>
